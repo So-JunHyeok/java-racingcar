@@ -18,7 +18,7 @@ public class Racing {
         List<Car> cars = carAttendList(inputView.carAttendNameSeparation(inputView.inputStringValue()));
 
         racingResult(cars, inputView.inputIntegerValue());
-        resultView.winnerView(resultView.winnerPrint(new RacingResult(cars).getWinnerCarsName()));
+        resultView.winnerView(new RacingResult(cars).getWinnerCarsName());
     }
 
     private static void racingResult(List<Car> cars, int frequency) {

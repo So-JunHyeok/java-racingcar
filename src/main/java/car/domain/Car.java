@@ -1,12 +1,9 @@
 package car.domain;
 
-import java.util.Random;
-
 public class Car {
 
     private int position = 0;
     private String name;
-    private Movable  movable;
 
     private Car(){}
     public Car(String name){
@@ -14,12 +11,7 @@ public class Car {
         this.name = name;
     }
 
-    private void setMovable(Movable movable){
-        this.movable = movable;
-    }
-
     public void move(Movable movable){
-        setMovable(movable);
         if(movable.moveStrategy() > 3) {
             position += 1;
         }

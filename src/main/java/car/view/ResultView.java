@@ -1,9 +1,6 @@
 package car.view;
-
-import car.domain.RacingResult;
-import car.domain.Car;
-
 import java.util.List;
+
 
 public class ResultView {
 
@@ -19,11 +16,11 @@ public class ResultView {
         System.out.println();
     }
 
-    public void winnerView(String winnerName){
-        System.out.println(winnerName+"가 우승하였습니다.");
+    public void winnerView(List<String> strings){
+        System.out.println(winnerPrint(strings)+"가 우승하였습니다.");
     }
 
-    public String winnerPrint(List<String> strings){
+    private String winnerPrint(List<String> strings){
         String winnerName = "";
         for(String name : strings){
             winnerName += addComma(winnerName)+name;

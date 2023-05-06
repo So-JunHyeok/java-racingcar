@@ -8,15 +8,14 @@ import java.util.List;
 public class RacingResult {
 
     private int max = 0;
-    private List<Car> racingResult;
+
     private List<String> winnerCars;
 
 
     public RacingResult(List<Car> cars) {
-        this.racingResult = cars;
         winnerCars = new ArrayList<>();
-        racingMaxPosition();
-        winnerConfirm();
+        racingMaxPosition(cars);
+        winnerConfirm(cars);
     }
 
     private void setMax(int carPosition) {
@@ -24,8 +23,8 @@ public class RacingResult {
             this.max = carPosition;
         }
     }
-    public void racingMaxPosition() {
-        for (Car car : this.racingResult) {
+    public void racingMaxPosition(List<Car> cars) {
+        for (Car car : cars) {
             setMax(car.getPosition());
         }
     }
@@ -36,8 +35,8 @@ public class RacingResult {
         }
     }
 
-    public void winnerConfirm(){
-        for (Car car : this.racingResult) {
+    public void winnerConfirm(List<Car> cars){
+        for (Car car : cars) {
             addWinnerCar(car);
         }
     }
